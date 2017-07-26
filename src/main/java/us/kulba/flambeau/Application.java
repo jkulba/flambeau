@@ -7,15 +7,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Main driver for application
+ *
+ * @author James Kulba, jkulba@gmail.com, 2017
+ */
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 	final Logger logger = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
         SpringApplication app = new SpringApplication(Application.class);
-        app.setBannerMode(Banner.Mode.OFF);
+//        app.setBannerMode(Banner.Mode.OFF);  //Banner.mode value is now set in the application.yml
         app.run(args);
-
 	}
 
 	@Override

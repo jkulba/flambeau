@@ -1,0 +1,24 @@
+# Development Configuration
+
+app:
+  profile: DEV
+
+info:
+  app:
+    name: flambeau
+    description: Flambeau Command-line Test Tool
+    version: 1.0.0
+
+spring:
+  application:
+    name: flambeau
+
+  # Profiles that should be active
+  profiles.active: default
+  profiles: default
+
+  # Configuration for SpringApplication setters
+  main:
+    web-environment: false
+    banner-mode: 'off'
+    log-startup-info: false
