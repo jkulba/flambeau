@@ -11,8 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import us.kulba.flambeau.config.ApplicationConfig;
 
 /**
  * Generic test file
@@ -24,9 +26,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ApplicationTests {
     final Logger logger = LoggerFactory.getLogger(ApplicationTests.class);
 
+    @Autowired
+    private ApplicationConfig applicationConfig;
+
 	private void googleExampleThatSearchesFor(final String searchString) {
 
-        System.setProperty("webdriver.gecko.driver", "geckodriver");
+        System.setProperty("webdriver.gecko.driver", applicationConfig.getDriver());
 
 		WebDriver driver = new FirefoxDriver();
 
@@ -37,7 +42,7 @@ public class ApplicationTests {
 		searchField.clear();
 		searchField.sendKeys(searchString);
 
-		System.out.println("Page title is: " + driver.getTitle());
+		logger.info("Page title is: " + driver.getTitle());
 
 		searchField.submit();
 
@@ -47,7 +52,7 @@ public class ApplicationTests {
 		});
 
 
-		System.out.println("Page title is: " + driver.getTitle());
+		logger.info("Page title is: " + driver.getTitle());
 
 		driver.quit();
 	}

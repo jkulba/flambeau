@@ -2,6 +2,7 @@
 
 app:
   profile: DEV
+  driver: chromedriver
 
 info:
   app:

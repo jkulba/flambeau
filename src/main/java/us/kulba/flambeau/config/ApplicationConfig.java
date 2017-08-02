@@ -18,18 +18,20 @@ public class ApplicationConfig {
     final Logger logger = LoggerFactory.getLogger(ApplicationConfig.class);
 
     private String profile;
+    private String driver;
 
     public String getProfile() { return profile; }
 
     public void setProfile(String profile) { this.profile = profile; }
+
+    public String getDriver() { return driver; }
+
+    public void setDriver(String driver) { this.driver = driver; }
 
     @PostConstruct
     public void xxx() {
         logger.info("Initialized [Environment Profile: {}]", profile);
 
     }
-
-
-
 
 }
