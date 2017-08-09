@@ -19,6 +19,7 @@ public class ApplicationConfig {
 
     private String profile;
     private String driver;
+    private String driverProp;
 
     public String getProfile() { return profile; }
 
@@ -28,9 +29,15 @@ public class ApplicationConfig {
 
     public void setDriver(String driver) { this.driver = driver; }
 
+    public String getDriverProp() { return driverProp; }
+
+    public void setDriverProp(String driverProp) { this.driverProp = driverProp; }
+
     @PostConstruct
     public void xxx() {
         logger.info("Initialized [Environment Profile: {}]", profile);
+        logger.info("Initialized [Environment driver: {}]", driver);
+        logger.info("Initialized [Environment driverProp: {}]", driverProp);
 
     }
 
