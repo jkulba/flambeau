@@ -47,6 +47,12 @@
 			<version>${selenium.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
@@ -68,7 +74,19 @@
 			<version>3.8.0</version>
 			<scope>test</scope>
 		</dependency>
-		<!--<dependency>-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-safari-driver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-ie-driver</artifactId>
+        </dependency>
+        <!--<dependency>-->
 		<!--<groupId>de.flapdoodle.embed</groupId>-->
 		<!--<artifactId>de.flapdoodle.embed.mongo</artifactId>-->
 		<!--<scope>test</scope>-->

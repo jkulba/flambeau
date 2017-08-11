@@ -15,10 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import us.kulba.flambeau.config.ApplicationConfig;
+import us.kulba.flambeau.constants.BrowserType;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SimplePageLoadTest extends AbstractBrowserTest {
+public class SimplePageLoadTest {
     final Logger logger = LoggerFactory.getLogger(SimplePageLoadTest.class);
 
     @Autowired
@@ -28,9 +29,11 @@ public class SimplePageLoadTest extends AbstractBrowserTest {
 
     private void googleExampleThatSearchesFor(final String searchString) {
 
+        // Init the BrowserType based on config option: CHROME, FIREFOX, SAFARI, IE
+        String driverName = applicationConfig.getDriver();
         System.setProperty(applicationConfig.getDriverProp(), applicationConfig.getDriver());
 
-        driver = startDriver(Browsers.CHROME);
+        driver = BrowserType.valueOf(applicationConfig.getDriver()).startDriver();
 
         driver.get("http://www.google.com");
 
