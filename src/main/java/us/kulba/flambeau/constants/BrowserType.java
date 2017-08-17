@@ -13,18 +13,16 @@ public enum BrowserType {
 
         @Override
         public WebDriver startDriver() { return new ChromeDriver(); }
-
         @Override
         public String driverProp() { return "webdriver.chrome.driver"; }
 
     },
-    FIREFOX("FIREFOX") {
+    FIREFOX("GECKO") {
 
         @Override
         public WebDriver startDriver() { return new FirefoxDriver(); }
-
         @Override
-        public String driverProp() { return "webdriver.chrome.driver"; }
+        public String driverProp() { return "webdriver.gecko.driver"; }
 
     },
     SAFARI("SAFARI") {
@@ -59,6 +57,15 @@ public enum BrowserType {
 
     BrowserType(final String strValue) {
         this.strValue = strValue;
+    }
+
+    public static BrowserType fromString(String name) {
+        for (BrowserType b : BrowserType.values()) {
+            if (b.strValue.equalsIgnoreCase(name.toUpperCase())) {
+                return b;
+            }
+        }
+        return null;
     }
 
     public WebDriver startDriver() { return null; }

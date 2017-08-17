@@ -3,8 +3,7 @@
 app:
   profile: DEV
   driver: chromedriver
-  driverProp: webdriver.chrome.driver
-
+  browser: chrome
 
 info:
   app:
