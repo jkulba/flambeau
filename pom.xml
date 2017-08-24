@@ -5,7 +5,7 @@
 
 	<groupId>us.kulba</groupId>
 	<artifactId>flambeau</artifactId>
-	<version>1.0.0</version>
+	<version>2.0-development</version>
 	<packaging>jar</packaging>
 
 	<name>flambeau</name>
@@ -67,12 +67,12 @@
 			<artifactId>spring-boot-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.testng</groupId>-->
-			<!--<artifactId>testng</artifactId>-->
-			<!--<version>6.8.13</version>-->
-			<!--<scope>test</scope>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8.13</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
